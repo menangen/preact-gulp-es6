@@ -1,0 +1,17 @@
+@import "bootstrap/colors";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/scaffolding";
+@import "bootstrap/normalize";
+@import "bootstrap/grid";
+
+#foo {
+  button {
+    background-color: @body-bg;
+    border: 1px solid #555566;
+
+    &:hover {
+      background-color: saturate(@body-bg, 20%);
+    }
+  }
+}
