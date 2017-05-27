@@ -7,7 +7,9 @@ let less = require('gulp-less');
 let cssmin = require('gulp-cssmin');
 
 let rename = require("gulp-rename");
-let source = require('vinyl-source-stream');
+let source = require("vinyl-source-stream");
+var buffer = require("vinyl-buffer");
+var uglify = require("gulp-uglify");
 let concat = require("gulp-concat");
 
 let rollup = require('rollup-stream');
@@ -45,7 +47,7 @@ gulp.task('javascript', () => {
     return rollup({
             // any option supported by Rollup can be set here.
             format: 'iife',
-            sourceMap: true,
+            sourceMap: !config.production,
             entry: `${config.srcLocation}/js/index.jsx`,
             moduleName: config.bundleName,
             plugins: [
@@ -62,7 +64,10 @@ gulp.task('javascript', () => {
                 //commonjs()
             ]
         })
+
         .pipe(source('all.js'))
+        .pipe(buffer())
+        .pipe(config.production ? uglify() : util.noop())
         .pipe(gulp.dest(`${config.distLocation}/js`));
 
 });
