@@ -4,7 +4,14 @@ html
         title Hello from Preact!
         link(rel="stylesheet", href="css/main.min.css")
     body
-        .container
+        .container-fluid
             .row
-                h1 Hello!
-        script(src="js/all.js")
+                .col-md-1.one
+                    span ES6
+                .col-md-1.two
+                    span Python
+                .col-md-1.three
+                    span Swift
+                .col-md-1.four
+                    span Flash
+        script(src="js/all.js", id="script")

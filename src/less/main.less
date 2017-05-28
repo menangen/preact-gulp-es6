@@ -1,3 +1,4 @@
+
 @import "bootstrap/colors";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -5,13 +6,48 @@
 @import "bootstrap/normalize";
 @import "bootstrap/grid";
 
-#foo {
-  button {
-    background-color: @body-bg;
-    border: 1px solid #555566;
+@import "bootstrap/normalize";
 
-    &:hover {
-      background-color: saturate(@body-bg, 20%);
-    }
-  }
+body {
+    background-color: #111;
+    color: #000;
+}
+
+.container-fluid {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    left: 0;
+    top: 0;
+}
+
+.col-md-1 {
+    text-align: center;
+}
+
+.resized-height { height: inherit; }
+
+.row {
+    .resized-height;
+}
+
+.one {
+    .resized-height;
+    
+    background-color: #FF0;
+}
+
+.two {
+    .resized-height;
+
+    background-color: #6c82b3;
+}
+
+.three {
+    background-color: #F90
+}
+
+.four {
+    background-color: #F00;
 }

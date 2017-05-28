@@ -32,12 +32,18 @@ let config = {
     }
 };
 
-gulp.task("default", ["less", "javascript"]);
+gulp.task("default", ["html", "less", "javascript"]);
+
+gulp.task("watch", () => {
+    gulp.watch(`${config.srcLocation}/pug/*.pug`, ["html"]);
+    gulp.watch(`${config.srcLocation}/less/**.less`, ["less"]);
+    gulp.watch(`${config.srcLocation}/js/*`, ["javascript"]);
+});
 
 gulp.task('html', () => {
     return gulp.src(`${config.srcLocation}/pug/*.pug`)
         .pipe(pug({
-            pretty: true
+            pretty: !config.production
         }))
         .pipe(gulp.dest(`${config.distLocation}`));
 });
@@ -75,10 +81,10 @@ gulp.task('javascript', () => {
 gulp.task('less', () => {
     // less styles from src/less folder
     // only one root file need compile
-    gulp.src(config.srcLocation +'/less/main.less')
+    gulp.src(`${config.srcLocation}/less/main.less`)
         //.pipe(sourcemaps.init())
         .pipe(less())
-        //.pipe(config.production ? cssmin() : util.noop())
+        .pipe(config.production ? cssmin() : util.noop())
         .pipe(rename({suffix: '.min'}))
         //.pipe(sourcemaps.write())
         .pipe(gulp.dest(config.distLocation +'/css'));

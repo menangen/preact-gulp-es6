@@ -25,6 +25,9 @@
   "scripts": {
     "start": "npm test",
     "build": "node_modules/.bin/gulp --production",
+    "watch": "node_modules/.bin/gulp watch",
+    "html": "node_modules/.bin/gulp html --production",
+    "less": "node_modules/.bin/gulp less --production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrey Menangen menangen@gmail.com",
