@@ -1,26 +1,23 @@
 /**
  * Created by menangen on 22.05.17.
  */
-//import { h, render } from 'preact';
-
 const wrapper = () => {
     let iteration = 0;
     let alpha = 0.05;
 
     return () => {
 
-        iteration != 0 ? iteration += alpha : iteration++;
+        iteration !== 0 ? iteration += alpha : iteration++;
 
         const columnOneSizeOnIterate = iteration * iteration;
         let result = (1 / columnOneSizeOnIterate) * 50;
         const value = 50 + result;
 
         result = 50 - result;
-        //console.log(`iteration: ${iteration}, value: ${value}`);
-        if (value < 80) { alpha += 0.01 };
+        if (value < 80) { alpha += 0.01 }
         return [value, result];
     }
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Loaded");
@@ -38,8 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let column4 = document.querySelector(".four");
         
         let interval = setInterval(() => {
-            //console.log("Interval tick");
-
             let computed = iterator();
 
             let columnOneSize = `${computed[0]}%`;
@@ -75,17 +70,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         }, 50);
-    };
-})
-
-/*
-render((
-    <div id="foo">
-        <span>Hello, world!</span>
-        <button onClick={ e => alert("hi!") }>Click Me</button>
-        <p>
-            <a href="#">Go to link</a>
-        </p>
-    </div>
-), document.body.script);
-*/
+    }
+});

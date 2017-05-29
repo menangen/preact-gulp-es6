@@ -12,6 +12,8 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-less": "^3.3.0",
     "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.7",
     "preact": "^8.1.0",
