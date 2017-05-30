@@ -13,6 +13,7 @@ body {
     color: #000;
 }
 
+
 .container-fluid {
     position: absolute;
     height: 100%;
@@ -22,8 +23,62 @@ body {
     top: 0;
 }
 
-.col-md-1 {
+.header_navigation {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+    .main-navbar {
+        list-style: none;
+        > li {
+            display: inline-block;
+            > a {
+                color: #000000;
+                text-decoration: none;
+                font-family: "Apple Chancery", sans-serif;
+                font-size: 20px;
+                font-weight: normal;
+                &.logo {
+                    font-weight: bold;
+                    font-size: 25px;
+                }
+                &:hover {
+                    color: #bad4ff;
+                }
+            }
+
+            &:not(:first-child) {
+                margin-left: 70px;
+            }
+        }
+    }
+
+}
+
+.block-center {
+    display: block;
+    width: 60%;
+    height: 20%;
+    position: absolute;
+    top: 40%;
+    left: 20%;
     text-align: center;
+
+    span {
+        font-size: 80px;
+        font-family: AppleMyungjo, sans-serif;
+        text-transform: uppercase;
+        &.python {
+            color: #c7e5ff;
+        }
+        &.swift {
+            color: #ffffff;
+        }
+        &.gamedev {
+            color: #f4ff89;
+        }
+    }
 }
 
 .resized-height { height: inherit; }
@@ -49,5 +104,5 @@ body {
 }
 
 .four {
-    background-color: #F00;
+    background-color: #54cdaf;
 }
