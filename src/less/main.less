@@ -33,6 +33,7 @@ body {
         list-style: none;
         > li {
             display: inline-block;
+
             > a {
                 color: #000000;
                 text-decoration: none;
@@ -49,8 +50,15 @@ body {
             }
 
             &:not(:first-child) {
+
                 margin-left: 70px;
+                @media (max-width: 830px) {
+                    display: block;
+                    margin-left: 0;
+                }
+
             }
+
         }
     }
 
@@ -69,6 +77,15 @@ body {
         font-size: 80px;
         font-family: AppleMyungjo, sans-serif;
         text-transform: uppercase;
+
+        @media (max-width: 1120px){
+            font-size: 50px;
+        };
+
+        @media (max-width: 360px){
+            font-size: 40px;
+        };
+
         &.python {
             color: #c7e5ff;
         }
@@ -87,20 +104,25 @@ body {
     .resized-height;
 }
 
-.one {
+.one, .two, .three, .four  {
     .resized-height;
-    
+
+    @media(max-width: 768px) {
+        height: 50%;
+        width: 100%;
+    };
+}
+
+.one {
     background-color: #FF0;
 }
 
 .two {
-    .resized-height;
-
     background-color: #6c82b3;
 }
 
 .three {
-    background-color: #F90
+    background-color: #F90;
 }
 
 .four {

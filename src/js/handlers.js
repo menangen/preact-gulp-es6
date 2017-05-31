@@ -22,7 +22,6 @@ const loadComplete = () => {
 
     columnOne.style.width = "100%";
     body.style.overflowY = "hidden";
-    body.style.paddingBottom = "100"
 
 };
 
@@ -31,17 +30,17 @@ const moveHandler = () => {
 
     const row = document.querySelector(".row");
     const rowWidth = row.scrollWidth;
+    const body = document.body;
+    body.style.overflowY = "visible";
 
-    if (rowWidth > 640) {// TODO: fix it
-
-        const body = document.body;
+    if (rowWidth > 768) {// TODO: fix it
 
         const columnOne = document.querySelector(".one");
         const columnTwo = document.querySelector(".two");
         const column3 = document.querySelector(".three");
         const column4 = document.querySelector(".four");
 
-        body.style.overflowY = "visible";
+
 
         const iterator = wrapper();
 
